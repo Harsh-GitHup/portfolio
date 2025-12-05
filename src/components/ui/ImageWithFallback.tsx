@@ -25,8 +25,8 @@ export default function ImageWithFallback({ src, fallbackSrc, alt, onError, ...r
 
     const finalSrc = broken ? resolvedFallback : src
 
-    const hasExplicitSize = typeof (rest as any).width === 'number' && typeof (rest as any).height === 'number'
-    const isFill = (rest as any).fill === true
+    const hasExplicitSize = typeof rest.width === 'number' && typeof rest.height === 'number'
+    const isFill = rest.fill === true
 
     return (
         <Image
