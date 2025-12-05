@@ -1,6 +1,6 @@
 # Harsh - Full-Stack Python Developer Portfolio
 
-A modern, responsive portfolio website built with Next.js, React, and Tailwind CSS. 
+A modern, responsive portfolio website built with Next.js, React, and Tailwind CSS.
 
 ## Features
 
