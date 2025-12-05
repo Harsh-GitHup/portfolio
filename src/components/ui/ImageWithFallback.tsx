@@ -8,27 +8,37 @@ type Props = Omit<ImageProps, 'src'> & {
     fallbackSrc?: string
 }
 
-const FALLBACK_PLACEHOLDER = 'https://via.placeholder.com/800x500?text=Image+Unavailable'
-const FALLBACK_UNSPLASH =
-    'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1200&fit=crop'
+const FALLBACK_DUMMYIMAGE = 'https://dummyimage.com/600x400/d6d6d6/000'
+const FALLBACK_PLACEHOLDER = 'https://placehold.co/600x400'
+const FALLBACK_UNSPLASH = 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1200&fit=crop'
 
 export default function ImageWithFallback({ src, fallbackSrc, alt, onError, ...rest }: Props) {
     const [broken, setBroken] = useState(false)
 
-    const resolvedFallback = useMemo(
-        () => fallbackSrc || FALLBACK_UNSPLASH || FALLBACK_PLACEHOLDER,
-        [fallbackSrc]
-    )
+    const resolvedFallback = useMemo(() => {
+        const candidate = fallbackSrc
+            || FALLBACK_UNSPLASH
+            || FALLBACK_PLACEHOLDER
+            || FALLBACK_DUMMYIMAGE
+        return typeof candidate === 'string' && candidate.length > 0 ? candidate : FALLBACK_PLACEHOLDER
+    }, [fallbackSrc]);
 
     const finalSrc = broken ? resolvedFallback : src
+
+    const hasExplicitSize = typeof (rest as any).width === 'number' && typeof (rest as any).height === 'number'
+    const isFill = (rest as any).fill === true
 
     return (
         <Image
             {...rest}
             alt={alt}
             src={finalSrc}
+            unoptimized={broken}
+            {...(!hasExplicitSize && !isFill && broken ? { width: 600, height: 400 } : {})}
             onError={(e) => {
-                setBroken(true)
+                if (!broken) {
+                    setBroken(true)
+                }
                 onError?.(e)
             }}
         />
