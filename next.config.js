@@ -8,6 +8,15 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'placehold.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dummyimage.com',
+      },
+      // this is deprecated website but still used widely as placeholder
+      {
+        protocol: 'https',
         hostname: 'via.placeholder.com',
       },
     ],
