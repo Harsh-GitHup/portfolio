@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons'
 import { socialLinks as socialData } from '@/data/links'
 

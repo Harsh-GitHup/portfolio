@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { socialLinks as socialData } from "@/data/links";
 import { contactInfo as contactData } from "@/data/contact";

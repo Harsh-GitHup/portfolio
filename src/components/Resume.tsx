@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { Download, MapPin, Calendar, Award, Briefcase, GraduationCap } from 'lucide-react'
 import { experience, education, certifications } from '@/data/resume'
 

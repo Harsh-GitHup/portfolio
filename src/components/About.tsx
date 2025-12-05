@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { Code, Coffee, Lightbulb, Heart } from 'lucide-react'
 import { highlights as aboutHighlights } from '@/data/about'
 
