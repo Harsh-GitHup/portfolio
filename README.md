@@ -25,6 +25,42 @@ A modern, responsive portfolio website built with Next.js, React, and Tailwind C
 - **Icons**: Lucide React
 - **Animations**: Framer Motion
 
+## Testing
+
+- Unit tests with Jest and React Testing Library
+- Integration tests with Cypress
+- Linting with ESLint and Prettier
+- Run all tests:
+
+### For running all tests
+
+```bash
+npx vitest run
+```
+
+#### OR
+
+```bash
+npm test
+npm run test
+```
+
+### For Single Test File
+
+```bash
+npx vitest run FileName.test.tsx
+```
+
+```bash
+# For linting the codebase
+npm run lint
+```
+
+```bash
+# For formatting the codebase
+npm run format
+```
+
 ## Deployment
 
 This portfolio is optimized for deployment on Vercel, Netlify, or GitHub Pages.
