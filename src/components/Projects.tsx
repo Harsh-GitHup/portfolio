@@ -1,17 +1,29 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState, Suspense, startTransition } from 'react'
 import ImageWithFallback from './ui/ImageWithFallback'
 import { ExternalLink, Filter } from 'lucide-react'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { projects, filters } from '@/data/projects'
+import ProjectCardSkeleton from '@/components/Suspense_Skeletons/ProjectCardSkeleton'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all')
 
-  const filteredProjects = activeFilter === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeFilter)
+  const filteredProjects = React.useMemo(() => {
+    if (activeFilter === 'all') return projects
+    return projects.filter(project => project.category === activeFilter)
+  }, [activeFilter])
+
+  // Simulate async loading so skeletons appear
+  const [visibleProjects, setVisibleProjects] = useState<typeof filteredProjects>([])
+  useEffect(() => {
+    setVisibleProjects([])
+    const id = setTimeout(() => {
+      startTransition(() => setVisibleProjects(filteredProjects))
+    }, 1000)
+    return () => clearTimeout(id)
+  }, [filteredProjects])
 
   return (
     <section id="projects" className="section-padding bg-gray-50">
@@ -45,94 +57,111 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
-              >
-                {/* Project Image */}
-                <div className="relative overflow-hidden">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    width={400}
-                    height={250}
-                    // Using local images; remove unoptimized
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <a
-                      href={project.liveUrl}
-                      className="p-2 bg-white rounded-full text-primary-600 hover:bg-primary-500 hover:text-white transition-colors"
-                      aria-label="View Live Demo"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="p-2 bg-white rounded-full text-primary-600 hover:bg-primary-500 hover:text-white transition-colors"
-                      aria-label="View Source Code"
-                    >
-                      <GitHubLogoIcon className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Project Info */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Key Highlights */}
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-800 mb-2">Key Features:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      {project.highlights.slice(0, 2).map((highlight) => (
-                        <li key={highlight} className="flex items-center">
-                          <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2"></span>
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-3">
-                    <a
-                      href={project.liveUrl}
-                      className="flex-1 bg-primary-500 text-white text-center py-2 rounded-lg hover:bg-primary-600 transition-colors font-medium"
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="flex-1 bg-gray-100 text-gray-700 text-center py-2 rounded-lg hover:bg-gray-200 transition-colors font-medium"
-                    >
-                      Source Code
-                    </a>
-                  </div>
-                </div>
+          <Suspense
+            fallback={
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" aria-label="loading projects">
+                {Array.from({ length: filteredProjects.length || 6 }).map((_, i) => (
+                  <ProjectCardSkeleton key={`skeleton-${i}`} />
+                ))}
               </div>
-            ))}
-          </div>
+            }
+          >
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {(visibleProjects.length ? visibleProjects : []).map((project) => (
+                <div
+                  key={project.id}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
+                >
+                  {/* Project Image */}
+                  <div className="relative overflow-hidden">
+                    <ImageWithFallback
+                      src={project.image}
+                      alt={project.title}
+                      width={400}
+                      height={250}
+                      // Using local images; remove unoptimized
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                      <a
+                        href={project.liveUrl}
+                        className="p-2 bg-white rounded-full text-primary-600 hover:bg-primary-500 hover:text-white transition-colors"
+                        aria-label="View Live Demo"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        className="p-2 bg-white rounded-full text-primary-600 hover:bg-primary-500 hover:text-white transition-colors"
+                        aria-label="View Source Code"
+                      >
+                        <GitHubLogoIcon className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Key Highlights */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-800 mb-2">Key Features:</h4>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        {project.highlights.slice(0, 2).map((highlight) => (
+                          <li key={highlight} className="flex items-center">
+                            <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2"></span>
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex gap-3">
+                      <a
+                        href={project.liveUrl}
+                        className="flex-1 bg-primary-500 text-white text-center py-2 rounded-lg hover:bg-primary-600 transition-colors font-medium"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        className="flex-1 bg-gray-100 text-gray-700 text-center py-2 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+                      >
+                        Source Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {visibleProjects.length === 0 && (
+                <>
+                  {Array.from({ length: filteredProjects.length || 6 }).map((_, i) => (
+                    <ProjectCardSkeleton key={`inline-skeleton-${i}`} />
+                  ))}
+                </>
+              )}
+            </div>
+          </Suspense>
 
           {/* Call to Action */}
           <div className="text-center mt-16">
