@@ -1,11 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import React, { Suspense, useEffect, useMemo, useState, startTransition } from 'react'
 import { skillCategories } from '@/data/skills'
 import { Code, Database, Server, Wrench, Brain, Cloud } from 'lucide-react'
+import SkillsSkeleton from '@/components/Suspense_Skeletons/SkillsSkeleton'
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('frontend')
+  const [visibleSkills, setVisibleSkills] = useState(
+    skillCategories.find(c => c.id === 'frontend')?.skills || []
+  )
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setIsLoading(true)
+    startTransition(() => {
+      const nextSkills = skillCategories.find(c => c.id === activeCategory)?.skills || []
+      // simulate brief loading to show skeleton
+      setTimeout(() => {
+        setVisibleSkills(nextSkills)
+        setIsLoading(false)
+      }, 300)
+    })
+  }, [activeCategory])
 
   const iconFor = (iconId: string) => {
     const cls = 'w-6 h-6'
@@ -27,11 +44,15 @@ const Skills = () => {
     }
   }
 
+  const activeCategoryMeta = useMemo(() => (
+    skillCategories.find(c => c.id === activeCategory)
+  ), [activeCategory])
+  const skeletonCount = activeCategoryMeta?.skills.length || 6
+
   return (
     <section id="skills" className="section-padding">
       <div className="container">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               My <span className="gradient-text">Skills</span>
@@ -42,7 +63,6 @@ const Skills = () => {
           </div>
 
           <div className="grid lg:grid-cols-4 gap-8">
-            {/* Category Navigation */}
             <div className="lg:col-span-1">
               <div className="sticky top-24">
                 <h3 className="text-xl font-semibold mb-4 text-gray-800">Categories</h3>
@@ -64,35 +84,40 @@ const Skills = () => {
               </div>
             </div>
 
-            {/* Skills Display */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="p-3 bg-primary-100 text-primary-600 rounded-lg">
-                    {iconFor(skillCategories.find(c => c.id === activeCategory)?.iconId || 'code')}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800">
-                    {skillCategories.find(c => c.id === activeCategory)?.title}
-                  </h3>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  {skillCategories.find(c => c.id === activeCategory)?.skills.map((skill) => (
-                    <div key={skill.name} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium text-gray-800">{skill.name}</span>
-                        <span className="text-sm text-gray-600">{skill.level}%</span>
+              <Suspense fallback={<SkillsSkeleton count={skeletonCount} />}>
+                {isLoading ? (
+                  <SkillsSkeleton count={skeletonCount} />
+                ) : (
+                  <div className="bg-white rounded-xl shadow-lg p-8">
+                    <div className="flex items-center gap-3 mb-8">
+                      <div className="p-3 bg-primary-100 text-primary-600 rounded-lg">
+                        {iconFor(activeCategoryMeta?.iconId || 'code')}
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div
-                          className="bg-linear-to-r from-primary-500 to-primary-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
+                      <h3 className="text-2xl font-bold text-gray-800">
+                        {activeCategoryMeta?.title}
+                      </h3>
                     </div>
-                  ))}
-                </div>
-              </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {visibleSkills.map((skill) => (
+                        <div key={skill.name} className="space-y-2">
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium text-gray-800">{skill.name}</span>
+                            <span className="text-sm text-gray-600">{skill.level}%</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div
+                              className="bg-linear-to-r from-primary-500 to-primary-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                              style={{ width: `${skill.level}%` }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </Suspense>
             </div>
           </div>
         </div>
