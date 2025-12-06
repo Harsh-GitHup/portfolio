@@ -21,7 +21,7 @@ const Projects = () => {
     setVisibleProjects([])
     const id = setTimeout(() => {
       startTransition(() => setVisibleProjects(filteredProjects))
-    }, 1000)
+    }, 300)
     return () => clearTimeout(id)
   }, [filteredProjects])
 
