@@ -55,14 +55,11 @@ const Contact = () => {
       })
       const json = await res.json()
       if (!res.ok || !json.ok) {
-        if (json?.errors) {
-          setErrors({
-            fieldErrors: json.errors.fieldErrors ?? {},
-            formErrors: json.errors.formErrors ?? [],
-          })
-        } else {
-          alert('Please check your input and try again.')
-        }
+        const errorMsg = json?.error || 'Please check your inputs and try again.'
+        setErrors({
+          fieldErrors: json?.errors?.fieldErrors ?? {},
+          formErrors: json?.errors?.formErrors?.length ? json.errors.formErrors : [errorMsg],
+        })
         setIsSubmitting(false)
         return
       }
@@ -71,7 +68,10 @@ const Contact = () => {
       setErrors({ fieldErrors: {}, formErrors: [] })
     } catch (err) {
       console.error('Contact form submission error:', err)
-      alert('Something went wrong. Please try again later.')
+      setErrors({
+        fieldErrors: {},
+        formErrors: ['Network or server connection failed. Please try again or reach out directly.'],
+      })
     } finally {
       setIsSubmitting(false)
     }

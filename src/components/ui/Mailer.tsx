@@ -14,11 +14,19 @@ function escapeHtml(text: string): string {
 }
 
 export async function sendEmail(data: MailPayload): Promise<void> {
+    const user = process.env.MAIL_USER?.trim()
+    const rawPass = process.env.MAIL_PASS?.trim()
+    // Google app passwords may contain spaces (e.g. 'abcd efgh ijkl mnop')
+    const pass = rawPass ? rawPass.replace(/\s+/g, '') : ''
+
     const transporter = nodemailer.createTransport({
         service: 'gmail',
+        connectionTimeout: 10000,
+        greetingTimeout: 5000,
+        socketTimeout: 15000,
         auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASS,
+            user,
+            pass,
         },
     })
 
