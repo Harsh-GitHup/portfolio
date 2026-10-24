@@ -19,6 +19,7 @@ export async function POST(request: Request) {
             )
         }
 
+        // TODO: Integrate with email service or storage
         const hasMailEnv = !!process.env.MAIL_USER && !!process.env.MAIL_PASS
         if (hasMailEnv) {
             try {

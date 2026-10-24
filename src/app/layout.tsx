@@ -1,38 +1,39 @@
+import React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import PageSuspense from "@/components/PageSuspense";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Harsh Kesharwani - Full-Stack Python Developer",
+  title: "Harsh Kesharwani | Backend Software Engineer & Systems Architect",
   description:
-    "Professional portfolio of Harsh Kesharwani, a passionate full-stack Python developer specializing in modern web applications and scalable backend systems.",
+    "Backend Software Engineer & Systems Architect specializing in Python, FastAPI, Django, PostgreSQL, Redis, Docker, and distributed microservices architectures.",
   keywords: [
-    "Full-Stack Developer",
-    "Python Developer",
-    "React",
-    "Next.js",
-    "Django",
+    "Backend Developer",
+    "Systems Architect",
+    "Python Backend",
     "FastAPI",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "Microservices",
+    "Distributed Systems",
+    "RESTful API",
+    "WebSockets",
   ],
   authors: [{ name: "Harsh Kesharwani" }],
   creator: "Harsh Kesharwani",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://harsh-portfolio.vercel.app",
-    title: "Harsh Kesharwani - Full-Stack Python Developer",
+    url: "https://harsh-backend-portfolio.vercel.app",
+    title: "Harsh Kesharwani | Backend Software Engineer & Systems Architect",
     description:
-      "Professional portfolio showcasing expertise in Python, React, and modern web development.",
-    siteName: "Harsh Kesharwani Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Harsh Kesharwani - Full-Stack Python Developer",
-    description:
-      "Professional portfolio showcasing expertise in Python, React, and modern web development.",
-    creator: "@harsh_dev",
+      "Production-grade backend engineering portfolio featuring live API explorer, distributed system architecture diagrams, and high-concurrency projects.",
+    siteName: "Harsh Kesharwani Backend Portfolio",
   },
 };
 
@@ -42,8 +43,10 @@ export default function RootLayout({
   readonly children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="scroll-smooth dark">
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-[#0a0e14] text-gray-100 antialiased`}>
+        <PageSuspense label="Initializing backend cluster...">{children}</PageSuspense>
+      </body>
     </html>
   );
 }
