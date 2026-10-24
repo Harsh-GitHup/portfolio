@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: 'E-Commerce API Platform',
     description:
       'A scalable e-commerce backend API built with FastAPI and PostgreSQL. Features include user authentication, product catalog management, order processing with transactions, and Stripe payment integration.',
-    image: '/images/projects/ecommerce.jpg',
+    image: '/projects/E-CommerceAPI.jpg',
     technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'JWT', 'Stripe'],
     category: 'backend',
     liveUrl: 'https://demo-ecommerce-api.com',
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: 'Team Task Manager Backend & WebSockets',
     description:
       'A real-time backend service powering collaborative task management with Socket.io WebSockets, Node.js Express REST endpoints, and normalized MySQL relational persistence.',
-    image: '/images/projects/task-dashboard.jpg',
+    image: '/projects/TeamTaskManager.png',
     technologies: ['Node.js', 'Express', 'Socket.io', 'MySQL', 'WebSockets', 'JWT'],
     category: 'backend',
     liveUrl: 'https://team-task-manager-frontend-pi.vercel.app',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     title: 'AI Career Intelligence Engine',
     description:
       'Intelligent career platform backend built with Django REST Framework, asynchronous Celery queues, Redis broker, and Google Gemini API integration for automated resume scoring.',
-    image: '/images/projects/chatbot.jpg',
+    image: '/projects/AICareerPortal.png',
     technologies: ['Python', 'Django', 'Django REST Framework', 'Gemini API', 'Celery', 'Redis'],
     category: 'ai',
     liveUrl: 'https://demo-career-intelligence.com',
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     title: 'Flask Portfolio Web App & API',
     description:
       'A robust full-stack personal portfolio and contact processing application built with Python Flask, SQLAlchemy ORM, and SQLite database storage.',
-    image: '/images/projects/devops.jpg',
+    image: '/projects/FlaskPortfolio.png',
     technologies: ['Python', 'Flask', 'SQLAlchemy', 'SQLite', 'Jinja2', 'REST APIs'],
     category: 'fullstack',
     liveUrl: 'https://flask-portfolio-demo.com',
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     title: 'Python Automated File Organizer',
     description:
       'A system-level background automation daemon built in Python that monitors filesystem events and categorizes files into structured directory schemas based on metadata and MIME types.',
-    image: '/images/projects/devops.jpg',
+    image: '/projects/FileOrganizer.png',
     technologies: ['Python', 'OS API', 'Watchdog', 'Automation', 'CLI'],
     category: 'devops',
     liveUrl: '#',
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     title: 'Campus Placement ML Prediction Service',
     description:
       'A predictive machine learning service utilizing Scikit-learn and Python to analyze historical placement datasets and forecast student career outcomes with 70% accuracy.',
-    image: '/images/projects/analytics.jpg',
+    image: '/projects/ATMProject.png',
     technologies: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Flask API'],
     category: 'data',
     liveUrl: 'https://drive.google.com/file/d/1Z9OWd9YMUzs53Qd30eq3RlkDbjOQ3Je4/view?usp=share_link',
