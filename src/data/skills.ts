@@ -69,9 +69,14 @@ export const skillCategories: SkillCategory[] = [
     iconId: 'code',
     skills: [
       { name: 'React', level: 88 },
-      { name: 'Next.js', level: 85 },
+      { name: 'Angular', level: 80 },
+      { name: 'JavaScript', level: 88 },
       { name: 'TypeScript', level: 85 },
+      { name: 'Next.js', level: 85 },
       { name: 'Tailwind CSS', level: 88 },
+      { name: 'Bootstrap', level: 85 },
+      { name: 'HTML/CSS', level: 90 },
+      { name: 'Responsive Design', level: 90 },
     ],
   },
 ]

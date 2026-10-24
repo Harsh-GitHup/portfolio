@@ -9,19 +9,19 @@ export const contactInfo: ContactItem[] = [
     {
         id: 'email',
         label: 'Email',
-        value: 'harsh.dev@example.com',
-        link: 'mailto:harsh.dev@example.com',
+        value: 'harshkesharwani037@gmail.com',
+        link: 'mailto:harshkesharwani037@gmail.com',
     },
     {
-        id: 'phone',
+        id: 'phone', 
         label: 'Phone',
-        value: '+1 (555) 123-4567',
-        link: 'tel:+15551234567',
+        value: '+917987024525',
+        link: 'tel:+917987024525',
     },
     {
         id: 'location',
         label: 'Location',
-        value: 'San Francisco, CA',
+        value: 'Sagar, Madhya Pradesh, INDIA',
         link: null,
     },
 ]

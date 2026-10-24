@@ -1,7 +1,7 @@
 export const socialLinks = [
   { id: 'github', label: 'GitHub', href: 'https://github.com/Harsh-GitHup' },
   { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/harshkesharwani' },
-  { id: 'email', label: 'Email', href: 'mailto:harshkesharwani53@gmail.com' },
+  { id: 'email', label: 'Email', href: 'mailto:harshkesharwani037@gmail.com' },
 ]
 
 export const navItems = [
