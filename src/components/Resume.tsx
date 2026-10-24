@@ -39,7 +39,7 @@ const Resume = () => {
               <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950 border border-slate-800 text-xs font-mono text-indigo-400 mb-3 shadow-inner">
                   <GitBranch className="w-3.5 h-3.5 animate-pulse text-indigo-400" />
-                  <span>// CHRONOLOGY_LOGS :: ENGINEERING_CREDENTIALS</span>
+                  <span>{"// CHRONOLOGY_LOGS :: ENGINEERING_CREDENTIALS"}</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
                   My <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 font-mono">Resume</span>

@@ -24,7 +24,7 @@ const About = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-400 mb-3 shadow-inner">
             <Activity className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
-            <span>// ARCHITECTURE_CORE :: BIOGRAPHY</span>
+            <span>{"// ARCHITECTURE_CORE :: BIOGRAPHY"}</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-mono">Me</span>

@@ -58,7 +58,7 @@ const Skills = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-400 mb-3 shadow-inner">
             <Cpu className="w-3.5 h-3.5 animate-pulse text-cyan-400" />
-            <span>// STACK_MATRIX :: RUNTIME_CAPABILITIES</span>
+            <span>{"// STACK_MATRIX :: RUNTIME_CAPABILITIES"}</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 font-mono">Skills</span>
