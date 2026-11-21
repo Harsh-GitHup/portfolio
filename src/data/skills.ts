@@ -1,6 +1,6 @@
 export type Skill = { name: string; level: number }
 export type SkillCategory = {
-  id: 'backend' | 'database' | 'devops' | 'architecture' | 'frontend' | 'tools'
+  id: 'programming' | 'frameworks' | 'databases' | 'tools' | 'practices'
   title: string
   iconId: 'server' | 'database' | 'cloud' | 'brain' | 'code' | 'wrench'
   skills: Skill[]
@@ -8,75 +8,69 @@ export type SkillCategory = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'backend',
-    title: 'Backend Frameworks & Runtime',
-    iconId: 'server',
-    skills: [
-      { name: 'Python', level: 95 },
-      { name: 'FastAPI', level: 92 },
-      { name: 'Django / DRF', level: 90 },
-      { name: 'Flask', level: 85 },
-      { name: 'Node.js & Express', level: 85 },
-      { name: 'RESTful API Design', level: 95 },
-      { name: 'WebSockets & Socket.io', level: 85 },
-      { name: 'Microservices Architecture', level: 88 },
-    ],
-  },
-  {
-    id: 'database',
-    title: 'Databases & In-Memory Caching',
-    iconId: 'database',
-    skills: [
-      { name: 'PostgreSQL', level: 90 },
-      { name: 'Redis (Caching & Pub/Sub)', level: 92 },
-      { name: 'MySQL', level: 88 },
-      { name: 'MongoDB', level: 80 },
-      { name: 'SQLAlchemy / ORM', level: 90 },
-      { name: 'Database Indexing & Queries', level: 88 },
-      { name: 'Connection Pooling', level: 85 },
-      { name: 'Data Migrations (Alembic)', level: 85 },
-    ],
-  },
-  {
-    id: 'devops',
-    title: 'DevOps, Cloud & Infrastructure',
-    iconId: 'cloud',
-    skills: [
-      { name: 'Docker & Docker Compose', level: 90 },
-      { name: 'Linux / Bash Scripting', level: 88 },
-      { name: 'Nginx Reverse Proxy', level: 82 },
-      { name: 'CI/CD (GitHub Actions)', level: 85 },
-      { name: 'Celery Task Workers', level: 85 },
-      { name: 'Environment Governance', level: 90 },
-    ],
-  },
-  {
-    id: 'architecture',
-    title: 'Security, Testing & Architecture',
-    iconId: 'brain',
-    skills: [
-      { name: 'JWT & OAuth2 Authentication', level: 92 },
-      { name: 'Bcrypt Password Hashing', level: 95 },
-      { name: 'Rate Limiting & CORS', level: 90 },
-      { name: 'Unit Testing (Vitest / PyTest)', level: 88 },
-      { name: 'OpenAPI / Swagger Docs', level: 95 },
-      { name: 'Async Event Loops', level: 88 },
-    ],
-  },
-  {
-    id: 'frontend',
-    title: 'Supporting Full-Stack & UI',
+    id: 'programming',
+    title: 'Programming & Scripting',
     iconId: 'code',
     skills: [
-      { name: 'React', level: 88 },
-      { name: 'Angular', level: 80 },
-      { name: 'JavaScript', level: 88 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'Next.js', level: 85 },
-      { name: 'Tailwind CSS', level: 88 },
-      { name: 'Bootstrap', level: 85 },
-      { name: 'HTML/CSS', level: 90 },
-      { name: 'Responsive Design', level: 90 },
+      { name: 'Python (Core & Advanced)', level: 95 },
+      { name: 'Object-Oriented Programming (OOPs)', level: 92 },
+      { name: 'System Automation (OS, Shutil)', level: 90 },
+      { name: 'Voice Automation (pyttsx3, SpeechRecognition)', level: 88 },
+      { name: 'Data Structures & Algorithms', level: 85 },
+      { name: 'Bash & Scripting', level: 82 },
+    ],
+  },
+  {
+    id: 'frameworks',
+    title: 'Frameworks & Libraries',
+    iconId: 'server',
+    skills: [
+      { name: 'Django / Django REST Framework', level: 90 },
+      { name: 'Flask', level: 88 },
+      { name: 'FastAPI', level: 85 },
+      { name: 'NumPy & Pandas', level: 86 },
+      { name: 'Matplotlib & Seaborn', level: 84 },
+      { name: 'RESTful API Engineering', level: 92 },
+    ],
+  },
+  {
+    id: 'databases',
+    title: 'Databases & Data Management',
+    iconId: 'database',
+    skills: [
+      { name: 'MySQL', level: 90 },
+      { name: 'SQLite', level: 92 },
+      { name: 'MongoDB (NoSQL)', level: 82 },
+      { name: 'Database Normalization & Queries', level: 88 },
+      { name: 'Transaction Integrity & ACID', level: 85 },
+      { name: 'Redis Caching Basics', level: 80 },
+    ],
+  },
+  {
+    id: 'tools',
+    title: 'Developer Tools & Cloud Platforms',
+    iconId: 'cloud',
+    skills: [
+      { name: 'Git & GitHub Version Control', level: 92 },
+      { name: 'VS Code & PyCharm', level: 95 },
+      { name: 'Postman (API Testing)', level: 90 },
+      { name: 'Jupyter Notebook', level: 88 },
+      { name: 'GitHub Actions (CI/CD)', level: 82 },
+      { name: 'Cloud Deployment (Railway, Render)', level: 88 },
+    ],
+  },
+  {
+    id: 'practices',
+    title: 'Testing, Deployment & Soft Skills',
+    iconId: 'brain',
+    skills: [
+      { name: 'Testing & Unit Test Debugging', level: 88 },
+      { name: 'Analytical Thinking', level: 90 },
+      { name: 'Problem Solving', level: 92 },
+      { name: 'Browser Automation (TechSimPlus)', level: 85 },
+      { name: 'Interview Readiness (NPTEL Certified)', level: 90 },
+      { name: 'Collaborative Engineering', level: 90 },
     ],
   },
 ]
+

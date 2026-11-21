@@ -15,13 +15,13 @@ export const contactInfo: ContactItem[] = [
     {
         id: 'phone', 
         label: 'Phone',
-        value: '+917987024525',
+        value: '+91-7987024525',
         link: 'tel:+917987024525',
     },
     {
         id: 'location',
         label: 'Location',
-        value: 'Sagar, Madhya Pradesh, INDIA',
+        value: 'Sagar, MP (Open to Relocate / Remote)',
         link: null,
     },
 ]

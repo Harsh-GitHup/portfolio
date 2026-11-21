@@ -15,7 +15,7 @@ const Hero = () => {
     {
       command: 'whoami',
       output:
-        'Harsh Kesharwani | Backend Software Engineer & Systems Architect specializing in Python (FastAPI, Django), PostgreSQL, Redis caching, Docker containerization, and high-concurrency microservices.',
+        'Harsh Kesharwani | Python Developer & Backend Engineer with B.Tech in CSE (Corporate Institute of Science & Technology, 7.9 CGPA). Experienced in Python (Core & Advanced, OOPs), Flask, Django, automation tools (OS, Shutil, pyttsx3), and MySQL/SQLite relational databases.',
     },
     {
       command: 'curl -s https://api.harsh.dev/v1/health',
@@ -42,15 +42,15 @@ const Hero = () => {
       output = 'Available commands: whoami, stack, health, projects, architecture, clear'
     } else if (trimmed === 'whoami') {
       output =
-        'Harsh Kesharwani | Backend Software Engineer & Systems Architect specializing in Python (FastAPI, Django), PostgreSQL, Redis, and distributed systems.'
+        'Harsh Kesharwani | Python Developer & Backend Engineer with B.Tech in CSE (Corporate Institute of Science & Technology, 7.9 CGPA). Experienced in Python (Core & Advanced, OOPs), Flask, Django, automation tools, and MySQL/SQLite databases.'
     } else if (trimmed === 'stack' || trimmed === 'cat stack.json') {
       output = (
         <span className="text-cyan-300">
           {`{
-  "languages": ["Python", "TypeScript", "SQL", "Bash"],
-  "frameworks": ["FastAPI", "Django REST Framework", "Express.js", "Flask"],
-  "databases": ["PostgreSQL", "Redis", "MySQL", "MongoDB"],
-  "infra_devops": ["Docker", "Linux", "Nginx", "GitHub Actions", "Celery", "WebSockets"]
+  "languages": ["Python (Core & Advanced)", "SQL", "Bash", "JavaScript", "HTML/CSS"],
+  "frameworks_libraries": ["Django", "Flask", "FastAPI", "NumPy", "Pandas", "Matplotlib", "Seaborn"],
+  "databases": ["MySQL", "SQLite", "MongoDB"],
+  "tools_platforms": ["Git", "GitHub", "VS Code", "PyCharm", "Postman", "GitHub Actions", "Railway", "Render"]
 }`}
         </span>
       )

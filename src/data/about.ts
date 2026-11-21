@@ -1,22 +1,22 @@
 export const highlights = [
     {
         icon: "Code",
-        title: "Clean Code Advocate",
-        description: "I believe in writing maintainable, readable code that tells a story."
+        title: "Python & OOPs Specialist",
+        description: "Deep foundation in Core & Advanced Python, Object-Oriented design, and automation modules (OS, Shutil)."
     },
     {
-        icon: "Coffee",
-        title: "Problem Solver",
-        description: "Love tackling complex challenges and finding elegant solutions."
+        icon: "Server",
+        title: "Database-Driven Systems",
+        description: "Experienced in designing relational database schemas (MySQL, SQLite) and NoSQL (MongoDB) with transaction safety."
+    },
+    {
+        icon: "Zap",
+        title: "Automation & Voice Systems",
+        description: "Delivered desktop automation and voice assistants (pyttsx3, speech recognition) cutting manual input time by 40%."
     },
     {
         icon: "Lightbulb",
-        title: "Continuous Learner",
-        description: "Always exploring new technologies and staying updated with industry trends."
-    },
-    {
-        icon: "Heart",
-        title: "User Focused",
-        description: "Passionate about creating applications that provide exceptional user experiences."
+        title: "Hackathon & Problem Solver",
+        description: "IBM Hack Challenge 2023 contender, building predictive ML models and continuous end-to-end solutions."
     }
 ];

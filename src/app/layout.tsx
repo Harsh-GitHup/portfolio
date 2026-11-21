@@ -89,17 +89,30 @@ const jsonLd = {
         "https://www.linkedin.com/in/harshkesharwani",
       ],
       email: "mailto:harshkesharwani037@gmail.com",
+      telephone: "+91-7987024525",
+      address: {
+        "@type": "PostalAddress",
+        "addressLocality": "Sagar",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        "name": "Corporate Institute of Science & Technology, Bhopal"
+      },
       knowsAbout: [
-        "Python",
-        "FastAPI",
+        "Python (Core & Advanced)",
+        "Object-Oriented Programming (OOPs)",
         "Django",
-        "PostgreSQL",
-        "Redis",
-        "Docker",
-        "Microservices",
-        "Distributed Systems",
+        "Flask",
+        "FastAPI",
+        "MySQL",
+        "SQLite",
+        "MongoDB",
+        "System Automation",
         "REST APIs",
-        "WebSockets",
+        "Git",
+        "GitHub Actions",
       ],
     },
     {

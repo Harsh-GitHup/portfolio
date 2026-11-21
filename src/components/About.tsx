@@ -10,6 +10,8 @@ const iconMap: Record<string, JSX.Element> = {
   Coffee: <Coffee className="w-5 h-5" />,
   Lightbulb: <Lightbulb className="w-5 h-5" />,
   Heart: <Heart className="w-5 h-5" />,
+  Server: <Server className="w-5 h-5" />,
+  Zap: <Zap className="w-5 h-5" />,
 }
 
 const About = () => {
@@ -58,13 +60,13 @@ const About = () => {
                     <span>My Story &amp; Systems Philosophy</span>
                   </h3>
                   <p className="text-slate-300 leading-relaxed text-sm sm:text-base mb-4">
-                    Hello! I&apos;m Harsh, a backend engineer and systems architect with over 3 years of hands-on experience designing robust server-side infrastructures. My fascination began with understanding how databases guarantee ACID compliance and how networks route massive traffic spikes without collapsing.
+                    Hello! I&apos;m Harsh Kesharwani, an entry-level Python Developer and backend systems engineer with a B.Tech in Computer Science &amp; Engineering (2020–2024, 7.9 CGPA) from Corporate Institute of Science &amp; Technology, Bhopal. I have a proven track record of delivering end-to-end applications, including a custom Voice Assistant and a comprehensive File Organizer that yielded a 40% reduction in manual effort.
                   </p>
                   <p className="text-slate-300 leading-relaxed text-sm sm:text-base mb-4">
-                    I specialize in Python, FastAPI, Django REST Framework, PostgreSQL shard topologies, and in-memory Redis caching layers. I write clean, benchmarked, and containerized code where error boundaries, asynchronous workers (Celery), and connection pool optimizations are treated as first-class citizens.
+                    I specialize in Python (Core &amp; Advanced, OOPs), Flask, Django, REST APIs, and database-driven architectures using MySQL, SQLite, and MongoDB. I write clean, modular, and well-tested code with unit test validation, containerized deployment pipelines (Railway, Render, GitHub Actions), and robust error boundaries.
                   </p>
                   <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                    When not tuning database queries or profiling endpoints, I explore distributed consensus algorithms, contribute to open-source tooling, and continuously architect higher-availability systems.
+                    When not architecting backend APIs or automating workflows, I participate in competitive hackathons (IBM Hack Challenge 2023 contender with predictive ML placement models) and continuously build scalable, real-world software.
                   </p>
                 </div>
 
@@ -72,24 +74,24 @@ const About = () => {
                 <div className="pt-4 border-t border-slate-800/80">
                   <div className="text-xs font-mono uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Operational SLA Benchmarks</span>
+                    <span>Academic &amp; Systems Metrics</span>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
                     <div className="p-3 bg-slate-950/80 border border-slate-800/80 rounded-xl text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-emerald-400">99.98%</div>
-                      <div className="text-[11px] text-slate-400 mt-1">Uptime SLA</div>
+                      <div className="text-xl sm:text-2xl font-bold text-emerald-400">40%</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Efficiency Gain</div>
                     </div>
                     <div className="p-3 bg-slate-950/80 border border-slate-800/80 rounded-xl text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-cyan-400">18ms</div>
-                      <div className="text-[11px] text-slate-400 mt-1">P99 Latency</div>
+                      <div className="text-xl sm:text-2xl font-bold text-cyan-400">7.9</div>
+                      <div className="text-[11px] text-slate-400 mt-1">B.Tech CGPA</div>
                     </div>
                     <div className="p-3 bg-slate-950/80 border border-slate-800/80 rounded-xl text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-indigo-400">50+</div>
-                      <div className="text-[11px] text-slate-400 mt-1">Repos &amp; APIs</div>
+                      <div className="text-xl sm:text-2xl font-bold text-indigo-400">4+</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Certifications</div>
                     </div>
                     <div className="p-3 bg-slate-950/80 border border-slate-800/80 rounded-xl text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-amber-400">3+ Yrs</div>
-                      <div className="text-[11px] text-slate-400 mt-1">Production</div>
+                      <div className="text-xl sm:text-2xl font-bold text-amber-400">2020-24</div>
+                      <div className="text-[11px] text-slate-400 mt-1">CSE Graduate</div>
                     </div>
                   </div>
                 </div>

@@ -26,86 +26,82 @@ export type Certification = {
 
 export const experience: Experience[] = [
     {
-        title: 'Senior Full-Stack Developer',
-        company: 'TechCorp Solutions',
-        location: 'San Francisco, CA',
-        period: '2022 - Present',
-        type: 'Full-time',
+        title: 'Python Developer & Automation Engineer',
+        company: 'Software Engineering & Open-Source Projects',
+        location: 'Sagar, MP (Open to Relocate / Remote)',
+        period: '2023 - Present',
+        type: 'Projects & Production',
         description:
-            'Lead development of scalable web applications using Python, Django, and React. Mentored junior developers and implemented CI/CD pipelines.',
+            'Engineered desktop automation applications, database-driven workflows, and voice-assisted systems in Python, integrating core logic with relational databases to solve real-world operational challenges.',
         achievements: [
-            'Reduced application load time by 40% through optimization',
-            'Led team of 5 developers on microservices architecture',
-            'Implemented automated testing, increasing code coverage to 90%',
-            'Designed and deployed cloud infrastructure on AWS',
+            'Built File Organizer desktop application utilizing OS and Shutil modules to categorize files by type, reducing manual organization time by 40%',
+            'Engineered Voice Assistant app using speech recognition and pyttsx3 for voice-driven task automation, cutting manual input time by 40%',
+            'Designed structured Library Management and ATM Management systems with OOPs principles and secure MySQL/SQLite storage',
+            'Implemented comprehensive unit testing suites to ensure robust, secure, and error-free database transactions',
+            'Participated in IBM Hack Challenge 2023, building a predictive ML model for student placement classification',
         ],
     },
     {
-        title: 'Python Developer',
-        company: 'StartupXYZ',
-        location: 'Remote',
-        period: '2021 - 2022',
-        type: 'Full-time',
+        title: 'Full Stack Python & Backend Trainee',
+        company: 'Naresh i Technologies & TechSimPlus',
+        location: 'Bhopal / Remote, India',
+        period: '2022 - 2023',
+        type: 'Certification & Apprenticeship',
         description:
-            'Developed RESTful APIs and web applications using FastAPI and React. Worked closely with product team to implement new features.',
+            'Completed rigorous hands-on training across Core & Advanced Python, Django, Flask, MySQL, browser automation, and image processing.',
         achievements: [
-            'Built high-performance APIs handling 10k+ requests/minute',
-            'Integrated third-party services and payment gateways',
-            'Collaborated with UI/UX team on responsive designs',
-            'Maintained 99.9% uptime for production applications',
-        ],
-    },
-    {
-        title: 'Junior Full-Stack Developer',
-        company: 'WebDev Agency',
-        location: 'New York, NY',
-        period: '2020 - 2021',
-        type: 'Full-time',
-        description:
-            'Created custom websites and web applications for clients using various technologies including Django, Flask, and JavaScript frameworks.',
-        achievements: [
-            'Delivered 15+ successful client projects',
-            'Improved development workflow with automated deployment',
-            'Learned advanced Python patterns and best practices',
-            'Contributed to open-source projects',
+            'Developed modular REST APIs with Flask and Django with relational database connectivity',
+            'Built browser automation scripts and image processing pipelines using Python at TechSimPlus',
+            'Automated CI/CD build checks via GitHub Actions and deployed applications to Railway and Render',
+            'Completed NPTEL Online Soft Skills Training on Interview Readiness with distinction',
         ],
     },
 ]
 
 export const education: Education[] = [
     {
-        degree: 'Bachelor of Science in Computer Science',
-        institution: 'University of Technology',
-        location: 'California',
-        period: '2016 - 2020',
+        degree: 'B. Tech in Computer Science & Engineering',
+        institution: 'Corporate Institute of Science & Technology',
+        location: 'Bhopal, Madhya Pradesh',
+        period: '2020 – 2024',
         details:
-            'Graduated Magna Cum Laude with focus on Software Engineering and Data Structures',
+            'Graduated with 7.9 CGPA. Strong focus on Object-Oriented Programming (OOPs), Data Structures, Relational Database Systems, and Systems Architecture.',
         courses: [
             'Data Structures & Algorithms',
-            'Database Systems',
-            'Software Engineering',
-            'Web Development',
+            'Object-Oriented Programming (OOPs)',
+            'Relational Database Systems (MySQL & SQLite)',
+            'Operating Systems & Automation',
+            'Computer Networks & Protocols',
+            'Software Engineering & Unit Testing',
+            'REST APIs & Web Architectures',
         ],
     },
 ]
 
 export const certifications: Certification[] = [
     {
-        name: 'AWS Certified Solutions Architect',
-        issuer: 'Amazon Web Services',
+        name: 'Full Stack Python Development',
+        issuer: 'Naresh i Technologies',
         date: '2023',
-        credential: 'SAA-C03',
+        credential: 'NIT-FSPD-CERT',
     },
     {
-        name: 'Professional Scrum Master I',
-        issuer: 'Scrum.org',
-        date: '2022',
-        credential: 'PSM-I',
+        name: 'Browser Automation & Image Processing with Python',
+        issuer: 'TechSimPlus',
+        date: '2023',
+        credential: 'TSP-BAIP-PY',
     },
     {
-        name: 'Python Institute PCPP',
-        issuer: 'Python Institute',
-        date: '2021',
-        credential: 'PCPP-32-101',
+        name: 'Python Fundamentals for Beginners',
+        issuer: 'Udemy',
+        date: '2023',
+        credential: 'UDEMY-PY-FUND',
+    },
+    {
+        name: 'Online Soft Skills Training on Interview Readiness',
+        issuer: 'NPTEL',
+        date: '2023',
+        credential: 'NPTEL-IR-2023',
     },
 ]
+
