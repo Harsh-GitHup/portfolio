@@ -56,4 +56,5 @@ const nextConfig = {
   },
 }
 
+// Next.js configuration for Harsh Kesharwani Backend Portfolio
 export default nextConfig;

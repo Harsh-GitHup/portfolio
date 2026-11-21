@@ -90,8 +90,8 @@ const About = () => {
                       <div className="text-[11px] text-slate-400 mt-1">Certifications</div>
                     </div>
                     <div className="p-3 bg-slate-950/80 border border-slate-800/80 rounded-xl text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-amber-400">2020-24</div>
-                      <div className="text-[11px] text-slate-400 mt-1">CSE Graduate</div>
+                      <div className="text-xl sm:text-2xl font-bold text-amber-400">10+</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Repos &amp; APIs</div>
                     </div>
                   </div>
                 </div>
